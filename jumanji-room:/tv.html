@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jumanji TV</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Start screen -->
+<div id="intro">
+  <button id="startBtn">▶ ENTER THE JUNGLE</button>
+</div>
+
+<!-- Intro video (fullscreen) -->
+<video id="introVideo" src="video/intro-video.mp4" style="display:none;"></video>
+
+<!-- QR Code screen -->
+<div id="qrScreen" style="display:none;">
+  <h1>Scan to Begin</h1>
+  <img src="images/qr-code.png" alt="QR Code" id="qrImage">
+  <p>Scan this code with one phone to sync your team with the board.</p>
+</div>
+
+<!-- Game stage display -->
+<div id="stageDisplay" style="display:none;">
+  <h1 id="stageTitle"></h1>
+  <p id="stageText"></p>
+  <div id="timer">07:00</div>
+</div>
+
+<!-- Audio elements -->
+<audio id="introVO" src="audio/intro-voiceover.mp3"></audio>
+<audio id="drumsBG" src="audio/drums-bg.mp3" loop></audio>
+<audio id="correctSFX" src="audio/correct-answer.mp3"></audio>
+<audio id="wrongSFX" src="audio/wrong-answer.mp3"></audio>
+<audio id="victorySFX" src="audio/victory.mp3"></audio>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="game-config.js"></script>
+<script src="tv.js"></script>
+</body>
+</html>
