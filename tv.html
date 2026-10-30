@@ -203,10 +203,14 @@
   // ---------- Firebase listener ----------
   db.ref('game').on('value', (snapshot) => {
     const data = snapshot.val();
+    console.log("Firebase data received:", data);
     if (!data) return;
+
+    console.log("Current stage on TV:", currentStage, "| New stage from Firebase:", data.stage);
 
     if (data.stage && data.stage !== currentStage) {
       currentStage = data.stage;
+      console.log("Stage changed! Calling handleStageChange with:", currentStage);
       handleStageChange(currentStage);
     }
   });
