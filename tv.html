@@ -167,6 +167,8 @@
   function endIntroSequence() {
     mainVideo.style.display = 'none';
     scanScreen.style.display = 'flex';
+    drumsBG.volume = 0.8;
+    drumsBG.play().catch(err => console.log("Drums error:", err));
   }
 
   startBtn.addEventListener('click', () => {
@@ -222,8 +224,6 @@
       trialScreen.style.display = 'block';
       triviaBox.style.display = 'none';
       instructionBox.style.display = 'block';
-      drumsBG.volume = 0.8;
-      drumsBG.play();
       playVoiceoverWithTypedText(trial1VO, instructionBox, GAME.trial1Text);
 
       trial1VO.onended = () => {
